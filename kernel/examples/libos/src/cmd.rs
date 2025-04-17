@@ -27,6 +27,7 @@ const CMD_TABLE: &[(&str, CmdHandler)] = &[
     ("pwd", do_pwd),
     ("rm", do_rm),
     ("uname", do_uname),
+    ("loader", do_loader),
 ];
 
 fn file_type_to_char(ty: FileType) -> char {
@@ -258,6 +259,10 @@ fn do_uname(_args: &str) {
         arch = arch,
         plat = platform,
     );
+}
+
+fn do_loader(_args: &str) {
+    println!("[anlj:] do loader");
 }
 
 fn do_help(_args: &str) {

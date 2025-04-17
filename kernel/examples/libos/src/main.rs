@@ -1,5 +1,6 @@
 #![cfg_attr(feature = "axstd", no_std)]
 #![cfg_attr(feature = "axstd", no_main)]
+#![feature(asm_const)]
 
 #[macro_use]
 #[cfg(feature = "axstd")]
@@ -19,6 +20,7 @@ macro_rules! path_to_str {
 }
 
 mod cmd;
+mod loader;
 
 #[cfg(feature = "use-ramfs")]
 mod ramfs;
@@ -48,6 +50,7 @@ fn main() {
 
     let mut buf = [0; MAX_CMD_LEN];
     let mut cursor = 0;
+    loader::alj();
     cmd::run_cmd("help".as_bytes());
     print_prompt();
 
