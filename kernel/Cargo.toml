@@ -26,6 +26,7 @@ members = [
     "examples/httpserver",
     "examples/httpserver",
     "examples/shell",
+    "examples/libos",
 ]
 
 [workspace.package]

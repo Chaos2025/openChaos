@@ -1,8 +1,8 @@
 [package]
-name = "arceos-shell"
+name = "arceos-libos"
 version = "0.1.0"
 edition = "2021"
-authors = ["Yuekai Jia <equation618@gmail.com>"]
+authors = ["Ansen <alj79@sohu.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -14,4 +14,4 @@ default = []
 axfs_vfs = { version = "0.1", optional = true }
 axfs_ramfs = { version = "0.1", optional = true}
 crate_interface = { version = "0.1", optional = true }
-axstd = { workspace = true, features = ["alloc", "fs"], optional = true }
+axstd = { workspace = true, features = ["alloc", "fs", "driver-ramdisk"], optional = true }
