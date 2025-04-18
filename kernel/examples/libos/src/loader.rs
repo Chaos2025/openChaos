@@ -21,8 +21,9 @@ pub fn loader(){
         core::slice::from_raw_parts_mut(RUN_START as *mut u8, load_size)
     };
     run_code.copy_from_slice(load_code);
-    let abi_table = unsafe {
-        &ABI_TABLE
+    let _abi_table = unsafe {
+        // &ABI_TABLE
+        core::ptr::addr_of!(ABI_TABLE)
     };
     println!("run code {:?}; address [{:?}]", run_code, run_code.as_ptr());
     // println!("address [{:?}]", run_code.as_ptr());

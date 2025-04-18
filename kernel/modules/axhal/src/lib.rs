@@ -34,13 +34,19 @@
 #[macro_use]
 extern crate log;
 
+#[allow(unused_imports)]
+#[macro_use]
+extern crate memory_addr;
+
 mod platform;
+
+#[macro_use]
+pub mod trap;
 
 pub mod arch;
 pub mod cpu;
 pub mod mem;
 pub mod time;
-pub mod trap;
 
 #[cfg(feature = "tls")]
 pub mod tls;
